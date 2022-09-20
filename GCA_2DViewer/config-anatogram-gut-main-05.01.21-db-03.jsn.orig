@@ -1,0 +1,351 @@
+{
+  "links": [],
+  "comment": "markers are single point features which are not landmarks",
+  "contact": "M.Arends@ed.ac.uk",
+  "description": "2D anatomogram model",
+  "format_version": 0,
+  "id": "GUT_ATLAS_MOD:30",
+  "landmarks": [
+    {
+      "links": [],
+      "anatomy": [
+        {
+          "links": [],
+          "abbreviated_name": "anus",
+          "comments": "",
+          "external_id": "UBERON:0001245",
+          "id": "GUT_ATLAS_ANA:20",
+          "provenance": "ASCT",
+          "text": "anus"
+        }
+      ],
+      "color": "0x000000",
+      "id": "GUT_ATLAS_REG:28",
+      "is_visible": true,
+      "paths": [
+        "GUT_ATLAS_PAT:30"
+      ],
+      "position": [
+        0
+      ],
+      "type": "landmark"
+    },
+    {
+      "links": [],
+      "anatomy": [
+        {
+          "links": [],
+          "abbreviated_name": "ARJ",
+          "comments": "ano-rectal junction",
+          "external_id": "UBERON:0000159",
+          "id": "GUT_ATLAS_ANA:19",
+          "provenance": "GCA",
+          "text": "anal canal/proximal"
+        }
+      ],
+      "color": "0x000000",
+      "id": "GUT_ATLAS_REG:47",
+      "is_visible": true,
+      "paths": [
+        "GUT_ATLAS_PAT:30"
+      ],
+      "position": [
+        51
+      ],
+      "type": "landmark"
+    },
+    {
+      "links": [],
+      "anatomy": [
+        {
+          "links": [],
+          "abbreviated_name": "RSJ",
+          "comments": "",
+          "external_id": "",
+          "id": "GUT_ATLAS_ANA:1007",
+          "provenance": "GCA",
+          "text": "recto-sigmoid junction"
+        }
+      ],
+      "color": "0x000000",
+      "id": "GUT_ATLAS_REG:48",
+      "is_visible": true,
+      "paths": [
+        "GUT_ATLAS_PAT:30"
+      ],
+      "position": [
+        368
+      ],
+      "type": "landmark"
+    },
+    {
+      "links": [],
+      "anatomy": [
+        {
+          "links": [],
+          "abbreviated_name": "DSJ",
+          "comments": "GCA Landmark",
+          "external_id": "",
+          "id": "GUT_ATLAS_ANA:1006",
+          "provenance": "GCA",
+          "text": "descending sigmoid junction"
+        }
+      ],
+      "color": "0x000000",
+      "id": "GUT_ATLAS_REG:49",
+      "is_visible": true,
+      "paths": [
+        "GUT_ATLAS_PAT:30"
+      ],
+      "position": [
+        676
+      ],
+      "type": "landmark"
+    },
+    {
+      "links": [],
+      "anatomy": [
+        {
+          "links": [],
+          "abbreviated_name": "SF",
+          "comments": "GCA Landmark",
+          "external_id": "",
+          "id": "GUT_ATLAS_ANA:1005",
+          "provenance": "GCA",
+          "text": "splenic flexure"
+        }
+      ],
+      "color": "0x000000",
+      "id": "GUT_ATLAS_REG:50",
+      "is_visible": true,
+      "paths": [
+        "GUT_ATLAS_PAT:30"
+      ],
+      "position": [
+        1318
+      ],
+      "type": "landmark"
+    },
+    {
+      "links": [],
+      "anatomy": [
+        {
+          "links": [],
+          "abbreviated_name": "HF",
+          "comments": "GCA Landmark",
+          "external_id": "",
+          "id": "GUT_ATLAS_ANA:1004",
+          "provenance": "GCA",
+          "text": "hepatic flexure"
+        }
+      ],
+      "color": "0x000000",
+      "id": "GUT_ATLAS_REG:51",
+      "is_visible": true,
+      "paths": [
+        "GUT_ATLAS_PAT:30"
+      ],
+      "position": [
+        1966
+      ],
+      "type": "landmark"
+    },
+    {
+      "links": [],
+      "anatomy": [
+        {
+          "links": [],
+          "abbreviated_name": "CCJ",
+          "comments": "GCA Landmark. Situated immediately distal to ileocaecal valve",
+          "external_id": "",
+          "id": "GUT_ATLAS_ANA:1003",
+          "provenance": "GCA",
+          "text": "caeco-colonic junction"
+        }
+      ],
+      "color": "0x000000",
+      "id": "GUT_ATLAS_REG:52",
+      "is_visible": true,
+      "paths": [
+        "GUT_ATLAS_PAT:30"
+      ],
+      "position": [
+        2400
+      ],
+      "type": "landmark"
+    },
+    {
+      "links": [],
+      "anatomy": [
+        {
+          "links": [],
+          "abbreviated_name": "ICV",
+          "comments": "",
+          "external_id": "UBERON:0000569",
+          "id": "GUT_ATLAS_ANA:11",
+          "provenance": "ASCT",
+          "text": "ileocaecal valve"
+        }
+      ],
+      "color": "0x000000",
+      "id": "GUT_ATLAS_REG:53",
+      "is_visible": true,
+      "paths": [
+        "GUT_ATLAS_PAT:30"
+      ],
+      "position": [
+        2419
+      ],
+      "type": "landmark"
+    },
+    {
+      "links": [],
+      "anatomy": [
+        {
+          "links": [],
+          "abbreviated_name": "AO",
+          "comments": "GCA Landmark",
+          "external_id": "",
+          "id": "GUT_ATLAS_ANA:1001",
+          "provenance": "GCA",
+          "text": "appendix orifice"
+        }
+      ],
+      "color": "0x000000",
+      "id": "GUT_ATLAS_REG:54",
+      "is_visible": true,
+      "paths": [
+        "GUT_ATLAS_PAT:30"
+      ],
+      "position": [
+        2490
+      ],
+      "type": "landmark"
+    },
+    {
+      "links": [],
+      "anatomy": [
+        {
+          "links": [],
+          "abbreviated_name": "TA",
+          "comments": "GCA Landmark",
+          "external_id": "",
+          "id": "GUT_ATLAS_ANA:1002",
+          "provenance": "GCA",
+          "text": "appendix tip"
+        }
+      ],
+      "color": "0x000000",
+      "id": "GUT_ATLAS_REG:55",
+      "is_visible": true,
+      "paths": [
+        "GUT_ATLAS_PAT:30"
+      ],
+      "position": [
+        2638
+      ],
+      "type": "landmark"
+    }
+  ],
+  "level": "generic",
+  "model_objects": [
+    {
+      "links": [],
+      "display_props": {
+        "color": "0xffffff",
+        "id": "GUT_ATLAS_DPR:16",
+        "opacity": 1
+      },
+      "filename": "anatogram-gut-main-05.01.21.png",
+      "filepath": "images/",
+      "group": "REFERENCE_IMAGES",
+      "id": "GUT_ATLAS_MOB:20"
+    },
+    {
+      "links": [],
+      "display_props": {
+        "color": "0xc00000",
+        "id": "GUT_ATLAS_DPR:17",
+        "text": "A-TA",
+        "opacity": 0.3
+      },
+      "filename": "anatogram-gut-main-05.01.21-mask-coloroverlay.png",
+      "filepath": "images/",
+      "group": "ANATOMY_IMAGES",
+      "id": "GUT_ATLAS_MOB:21",
+      "local_id": "A-TA"
+    },
+    {
+      "links": [],
+      "bounding_box": [
+        0,
+        0,
+        825,
+        1168
+      ],
+      "group": "MODEL_PROP",
+      "id": "GUT_ATLAS_MOB:22",
+      "pixel_image_id": "anatogram-gut-main-05.01.21.wlz",
+      "pixel_size": [
+        1,
+        1
+      ],
+      "segmentation_id": "HACK_TODO"
+    },
+    {
+      "links": [],
+      "display_props": {
+        "cursor": {
+          "size": 11,
+          "color": "0xffffff",
+          "opacity": 1
+        },
+        "font_size": 14,
+        "pick_precision": 1,
+        "label_font_size": 14,
+        "path_roi": {
+          "is_visible": "true",
+          "size": 20,
+          "color": "0xf06000",
+          "opacity": 1
+        },
+        "id": "GUT_ATLAS_DPR:18",
+        "marker_size": 18
+      },
+      "group": "GLOBAL_DISPLAY_PROP",
+      "id": "GUT_ATLAS_MOB:23"
+    }
+  ],
+  "model_type": "2D",
+  "name": "Anatomogram",
+  "owner": "GCA Project",
+  "paths": [
+    {
+      "links": [],
+      "anatomy": {
+        "links": [],
+        "abbreviated_name": "large intestine",
+        "comments": "",
+        "external_id": "UBERON:0000059",
+        "id": "GUT_ATLAS_ANA:3",
+        "provenance": "ASCT",
+        "text": "large intestine"
+      },
+      "display_props": {
+        "links": [],
+        "color": "0xffffff",
+        "id": "GUT_ATLAS_DPR:21",
+        "is_visible": "true",
+        "line_width": 3,
+        "opacity": 1
+      },
+      "filepath": "paths/",
+      "id": "GUT_ATLAS_PAT:30",
+      "local_id": "Anus-Appendix",
+      "map_filename": "anatogram-gut-main-05.01.21-bs-map-colon.jsn",
+      "spline_filename": "anatogram-gut-main-05.01.21-bs-colon.jsn"
+    }
+  ],
+  "species": "Human",
+  "version": 0
+}

@@ -1,0 +1,590 @@
+{
+    "links": [],
+    "comment": "Reference 3D Model",
+    "contact": "M.Arends@ed.ac.uk",
+    "description": "Edinburgh 3D atlas based on anonymised CT scan of a non inflated colon and terminal ileum developed as part of the Helmsley Gut Cell Atlas initiative.",
+    "id": "GUT_ATLAS_MOD:60",
+    "json_filename": "EdinGCA_3D_00060_1_5.json",
+    "landmarks": [
+        {
+            "links": [],
+            "anatomy": [
+                {
+                    "links": [],
+                    "abbreviated_name": "anus",
+                    "comments": "",
+                    "external_id": "UBERON:0001245",
+                    "id": "GUT_ATLAS_ANA:20",
+                    "provenance": "ASCT",
+                    "text": "anus"
+                }
+            ],
+            "color": "0x000000",
+            "id": "GUT_ATLAS_REG:28",
+            "is_visible": true,
+            "paths": [
+                "GUT_ATLAS_PAT:90"
+            ],
+            "position": [
+                0
+            ],
+            "type": "landmark"
+        },
+        {
+            "links": [],
+            "anatomy": [
+                {
+                    "links": [],
+                    "abbreviated_name": "ICVi",
+                    "comments": "",
+                    "external_id": "UBERON:0000569",
+                    "id": "GUT_ATLAS_ANA:1010",
+                    "provenance": "GCA",
+                    "text": "ileocaecal valve-ileum"
+                }
+            ],
+            "color": "0x000000",
+            "id": "GUT_ATLAS_REG:38",
+            "is_visible": true,
+            "paths": [
+                "GUT_ATLAS_PAT:100"
+            ],
+            "position": [
+                0
+            ],
+            "type": "landmark"
+        },
+        {
+            "links": [],
+            "anatomy": [
+                {
+                    "links": [],
+                    "abbreviated_name": "TIIJ",
+                    "comments": "GCA landmark",
+                    "external_id": "",
+                    "id": "GUT_ATLAS_ANA:1000",
+                    "provenance": "GCA",
+                    "text": "terminal ileum - ileum junction"
+                }
+            ],
+            "color": "0x000000",
+            "id": "GUT_ATLAS_REG:80",
+            "is_visible": true,
+            "paths": [
+                "GUT_ATLAS_PAT:100"
+            ],
+            "position": [
+                120
+            ],
+            "type": "landmark"
+        },
+        {
+            "links": [],
+            "anatomy": [
+                {
+                    "links": [],
+                    "abbreviated_name": "PIL",
+                    "comments": "GCA Pseudo Landmark",
+                    "id": "GUT_ATLAS_ANA:1012",
+                    "provenance": "GCA",
+                    "text": "proximal ileum limit"
+                }
+            ],
+            "color": "0x000000",
+            "id": "GUT_ATLAS_REG:81",
+            "is_visible": true,
+            "paths": [
+                "GUT_ATLAS_PAT:100"
+            ],
+            "position": [
+                202
+            ],
+            "type": "landmark"
+        },
+        {
+            "links": [],
+            "anatomy": [
+                {
+                    "links": [],
+                    "abbreviated_name": "DSJ",
+                    "comments": "GCA Landmark",
+                    "external_id": "UBERON:8410001",
+                    "id": "GUT_ATLAS_ANA:1006",
+                    "provenance": "GCA",
+                    "text": "descending sigmoid junction"
+                }
+            ],
+            "color": "0x000000",
+            "id": "GUT_ATLAS_REG:77",
+            "is_visible": true,
+            "paths": [
+                "GUT_ATLAS_PAT:90"
+            ],
+            "position": [
+                910
+            ],
+            "type": "landmark"
+        },
+        {
+            "links": [],
+            "anatomy": [
+                {
+                    "links": [],
+                    "abbreviated_name": "SF",
+                    "comments": "GCA Landmark",
+                    "external_id": "UBERON:0022276",
+                    "id": "GUT_ATLAS_ANA:1005",
+                    "provenance": "GCA",
+                    "text": "splenic flexure"
+                }
+            ],
+            "color": "0xffff30",
+            "id": "GUT_ATLAS_REG:75",
+            "is_visible": true,
+            "paths": [
+                "GUT_ATLAS_PAT:90"
+            ],
+            "position": [
+                1247
+            ],
+            "type": "landmark"
+        },
+        {
+            "links": [],
+            "anatomy": [
+                {
+                    "links": [],
+                    "abbreviated_name": "HF",
+                    "comments": "GCA Landmark",
+                    "external_id": "UBERON:0022277",
+                    "id": "GUT_ATLAS_ANA:1004",
+                    "provenance": "GCA",
+                    "text": "hepatic flexure"
+                }
+            ],
+            "color": "0x13f0c0",
+            "id": "GUT_ATLAS_REG:76",
+            "is_visible": true,
+            "paths": [
+                "GUT_ATLAS_PAT:90"
+            ],
+            "position": [
+                1381
+            ],
+            "type": "landmark"
+        },
+        {
+            "links": [],
+            "anatomy": [
+                {
+                    "links": [],
+                    "abbreviated_name": "ICVc",
+                    "comments": "",
+                    "external_id": "UBERON:0000569",
+                    "id": "GUT_ATLAS_ANA:1009",
+                    "provenance": "GCA",
+                    "text": "ileocaecal valve-caecum centreline"
+                }
+            ],
+            "color": "0x000000",
+            "id": "GUT_ATLAS_REG:79",
+            "is_visible": true,
+            "paths": [
+                "GUT_ATLAS_PAT:90"
+            ],
+            "position": [
+                1549
+            ],
+            "type": "landmark"
+        },
+        {
+            "links": [],
+            "anatomy": [
+                {
+                    "links": [],
+                    "abbreviated_name": "AO",
+                    "comments": "GCA Landmark",
+                    "external_id": "",
+                    "id": "GUT_ATLAS_ANA:1001",
+                    "provenance": "GCA",
+                    "text": "appendix orifice"
+                }
+            ],
+            "color": "0x000000",
+            "id": "GUT_ATLAS_REG:78",
+            "is_visible": true,
+            "paths": [
+                "GUT_ATLAS_PAT:90"
+            ],
+            "position": [
+                1606
+            ],
+            "type": "landmark"
+        },
+        {
+            "links": [],
+            "anatomy": [
+                {
+                    "links": [],
+                    "abbreviated_name": "AT",
+                    "comments": "GCA Landmark",
+                    "external_id": "",
+                    "id": "GUT_ATLAS_ANA:1002",
+                    "provenance": "GCA",
+                    "text": "appendix tip"
+                }
+            ],
+            "color": "0x000000",
+            "id": "GUT_ATLAS_REG:74",
+            "is_visible": true,
+            "paths": [
+                "GUT_ATLAS_PAT:90"
+            ],
+            "position": [
+                1624
+            ],
+            "type": "landmark"
+        }
+    ],
+    "level": "generic",
+    "model_objects": [
+        {
+            "links": [],
+            "display_props": {
+                "color": "0xf0d000",
+                "id": "GUT_ATLAS_DPR:6",
+                "text": "SF--SF",
+                "opacity": 0.3
+            },
+            "filename": "colon-SF--SF.vtk",
+            "filepath": "surfaces/",
+            "group": "ANATOMY_SURFACES",
+            "id": "GUT_ATLAS_MOB:69",
+            "local_id": "SF--SF",
+            "map_filename": "colon-SF--SF-map.jsn",
+            "path": "GUT_ATLAS_PAT:90"
+        },
+        {
+            "links": [],
+            "display_props": {
+                "color": "0x02f0b0",
+                "id": "GUT_ATLAS_DPR:9",
+                "text": "HF--HF",
+                "opacity": 0.3
+            },
+            "filename": "colon-HF--HF.vtk",
+            "filepath": "surfaces/",
+            "group": "ANATOMY_SURFACES",
+            "id": "GUT_ATLAS_MOB:60",
+            "local_id": "HF--HF",
+            "map_filename": "colon-HF--HF-map.jsn",
+            "path": "GUT_ATLAS_PAT:90"
+        },
+        {
+            "links": [],
+            "display_props": {
+                "color": "0x00c0f0",
+                "id": "GUT_ATLAS_DPR:10",
+                "text": "HF-HF+",
+                "opacity": 0.3
+            },
+            "filename": "colon-HF-HF+.vtk",
+            "filepath": "surfaces/",
+            "group": "ANATOMY_SURFACES",
+            "id": "GUT_ATLAS_MOB:61",
+            "local_id": "HF-HF+",
+            "map_filename": "colon-HF-HF+-map.jsn",
+            "path": "GUT_ATLAS_PAT:90"
+        },
+        {
+            "links": [],
+            "display_props": {
+                "color": "0x8000f0",
+                "id": "GUT_ATLAS_DPR:12",
+                "text": "ICVc-AO",
+                "opacity": 0.3
+            },
+            "filename": "colon-ICVc-AO.vtk",
+            "filepath": "surfaces/",
+            "group": "ANATOMY_SURFACES",
+            "id": "GUT_ATLAS_MOB:63",
+            "local_id": "ICVc-AO",
+            "map_filename": "colon-ICVc-AO-map.jsn",
+            "path": "GUT_ATLAS_PAT:90"
+        },
+        {
+            "links": [],
+            "display_props": {
+                "color": "0xf000f0",
+                "id": "GUT_ATLAS_DPR:13",
+                "text": "AO-TA",
+                "opacity": 0.3
+            },
+            "filename": "colon-AO-TA.vtk",
+            "filepath": "surfaces/",
+            "group": "ANATOMY_SURFACES",
+            "id": "GUT_ATLAS_MOB:64",
+            "local_id": "AO-TA",
+            "map_filename": "colon-AO-TA-map.jsn",
+            "path": "GUT_ATLAS_PAT:90"
+        },
+        {
+            "links": [],
+            "display_props": {
+                "color": "0xb0b000",
+                "id": "GUT_ATLAS_DPR:14",
+                "text": "ICVi-I",
+                "opacity": 0.3
+            },
+            "filename": "colon-ICVi-I.vtk",
+            "filepath": "surfaces/",
+            "group": "ANATOMY_SURFACES",
+            "id": "GUT_ATLAS_MOB:65",
+            "local_id": "ICVi-I",
+            "map_filename": "colon-ICVi-I-map.jsn",
+            "path": "GUT_ATLAS_PAT:100"
+        },
+        {
+            "links": [],
+            "display_props": {
+                "color": "0x0000f0",
+                "id": "GUT_ATLAS_DPR:11",
+                "text": "HF+-ICVc",
+                "opacity": 0.3
+            },
+            "filename": "colon-HF+-ICVc.vtk",
+            "filepath": "surfaces/",
+            "group": "ANATOMY_SURFACES",
+            "id": "GUT_ATLAS_MOB:62",
+            "local_id": "HF+-ICVc",
+            "map_filename": "colon-HF+-ICVc-map.jsn",
+            "path": "GUT_ATLAS_PAT:90"
+        },
+        {
+            "links": [],
+            "display_props": {
+                "color": "0xc00000",
+                "id": "GUT_ATLAS_DPR:4",
+                "text": "A-DSJ",
+                "opacity": 0.3
+            },
+            "filename": "colon-A-DSJ.vtk",
+            "filepath": "surfaces/",
+            "group": "ANATOMY_SURFACES",
+            "id": "GUT_ATLAS_MOB:56",
+            "local_id": "A-DSJ",
+            "map_filename": "colon-A-DSJ-map.jsn",
+            "path": "GUT_ATLAS_PAT:90"
+        },
+        {
+            "links": [],
+            "display_props": {
+                "color": "0xf08000",
+                "id": "GUT_ATLAS_DPR:5",
+                "text": "DSJ-SF-",
+                "opacity": 0.3
+            },
+            "filename": "colon-DSJ-SF-.vtk",
+            "filepath": "surfaces/",
+            "group": "ANATOMY_SURFACES",
+            "id": "GUT_ATLAS_MOB:57",
+            "local_id": "DSJ-SF-",
+            "map_filename": "colon-DSJ-SF--map.jsn",
+            "path": "GUT_ATLAS_PAT:90"
+        },
+        {
+            "links": [],
+            "display_props": {
+                "color": "0xa0f000",
+                "id": "GUT_ATLAS_DPR:7",
+                "text": "SF-SF+",
+                "opacity": 0.3
+            },
+            "filename": "colon-SF-SF+.vtk",
+            "filepath": "surfaces/",
+            "group": "ANATOMY_SURFACES",
+            "id": "GUT_ATLAS_MOB:58",
+            "local_id": "SF-SF+",
+            "map_filename": "colon-SF-SF+-map.jsn",
+            "path": "GUT_ATLAS_PAT:90"
+        },
+        {
+            "links": [],
+            "display_props": {
+                "color": "0x00c000",
+                "id": "GUT_ATLAS_DPR:8",
+                "text": "SF+-HF-",
+                "opacity": 0.3
+            },
+            "filename": "colon-SF+-HF-.vtk",
+            "filepath": "surfaces/",
+            "group": "ANATOMY_SURFACES",
+            "id": "GUT_ATLAS_MOB:59",
+            "local_id": "SF+-HF-",
+            "map_filename": "colon-SF+-HF--map.jsn",
+            "path": "GUT_ATLAS_PAT:90"
+        },
+        {
+            "links": [],
+            "display_props": {
+                "color": "0xffffff",
+                "thickness": 1.00,
+                "id": "GUT_ATLAS_DPR:41",
+                "radius": 30.00
+            },
+            "group": "DISC",
+            "id": "GUT_ATLAS_MOB:53"
+        },
+        {
+            "links": [],
+            "display_props": {
+                "label_offset": [
+                    0,
+                    0,
+                    8
+                ],
+                "path_highlight_width": 4,
+                "show_sections": "true",
+                "pick_precision": 1.0,
+                "model_views": [
+                    {
+                        "links": [],
+                        "cam_pos": [
+                            260,
+                            -1250,
+                            200
+                        ],
+                        "centre": [
+                            260,
+                            290,
+                            200
+                        ],
+                        "far": 10000,
+                        "id": "GUT_ATLAS_MOV:4",
+                        "near": 100,
+                        "type": "coronal",
+                        "up": [
+                            0,
+                            0,
+                            1
+                        ]
+                    }
+                ],
+                "path_highlight_color": "0xf06000",
+                "id": "GUT_ATLAS_DPR:42",
+                "default_view": "coronal",
+                "marker_size": 32
+            },
+            "group": "GLOBAL_DISPLAY_PROP",
+            "id": "GUT_ATLAS_MOB:68"
+        },
+        {
+            "links": [],
+            "bounding_box": [
+                56,
+                63,
+                35,
+                466,
+                394,
+                669
+            ],
+            "center_of_mass": [
+                255.956,
+                184.789,
+                399.805
+            ],
+            "group": "MODEL_PROP",
+            "id": "GUT_ATLAS_MOB:67",
+            "segmentation_id": "20200906-2-seg-15",
+            "voxel_image_id": "20200906-2",
+            "voxel_size": [
+                0.835938,
+                0.835938,
+                1.0
+            ]
+        },
+        {
+            "links": [],
+            "display_props": {
+                "color": "0xffffff",
+                "id": "GUT_ATLAS_DPR:3",
+                "opacity": 0.1
+            },
+            "filename": "20200906-body.vtk",
+            "filepath": "surfaces/",
+            "group": "REFERENCE_SURFACES",
+            "id": "GUT_ATLAS_MOB:66"
+        },
+        {
+            "links": [],
+            "filename": "section-0-%06d.jpg",
+            "filepath": "sections/",
+            "group": "SECTION_FILES",
+            "id": "GUT_ATLAS_MOB:54",
+            "path": "GUT_ATLAS_PAT:90"
+        },
+        {
+            "links": [],
+            "filename": "section-1-%06d.jpg",
+            "filepath": "sections/",
+            "group": "SECTION_FILES",
+            "id": "GUT_ATLAS_MOB:55",
+            "path": "GUT_ATLAS_PAT:100"
+        }
+    ],
+    "model_type": "3D",
+    "name": "Edinburgh GCA Non-Inflated-Gut CT Atlas",
+    "owner": "GCA Project",
+    "paths": [
+        {
+            "links": [],
+            "anatomy": {
+                "links": [],
+                "abbreviated_name": "large intestine",
+                "comments": "",
+                "external_id": "UBERON:0000059",
+                "id": "GUT_ATLAS_ANA:3",
+                "provenance": "ASCT",
+                "text": "large intestine"
+            },
+            "display_props": {
+                "links": [],
+                "color": "0xffffff",
+                "id": "GUT_ATLAS_DPR:22",
+                "is_visible": "false",
+                "line_width": 3.0,
+                "opacity": 1.0
+            },
+            "filepath": "paths/",
+            "id": "GUT_ATLAS_PAT:90",
+            "spline_filename": "path_20200906_0.jsn"
+        },
+        {
+            "links": [],
+            "anatomy": {
+                "links": [],
+                "abbreviated_name": "small intestine",
+                "comments": "",
+                "external_id": "UBERON:0002108",
+                "id": "GUT_ATLAS_ANA:2",
+                "provenance": "ASCT",
+                "text": "small intestine"
+            },
+            "display_props": {
+                "links": [],
+                "color": "0xffffff",
+                "id": "GUT_ATLAS_DPR:22",
+                "is_visible": "false",
+                "line_width": 3.0,
+                "opacity": 1.0
+            },
+            "filepath": "paths/",
+            "id": "GUT_ATLAS_PAT:100",
+            "spline_filename": "path_20200906_1.jsn"
+        }
+    ],
+    "serial": "00060",
+    "species": "Human",
+    "sub_version": 5,
+    "version": 1
+}

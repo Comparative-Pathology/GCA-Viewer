@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>GCA Model Browser</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" /> 
+		<link rel="stylesheet" href="GCA_Viewer.css" /> 
+
+ 		<script src="../external/jquery/jquery-3.5.1.min.js"></script>
+		<script src="../external/jquery/jquery-ui/jquery-ui.min.js"></script>
+		<script src="../external/svg/svg.min.js"></script>
+		<script src="../external/svg/svg.draggable.min.js"></script>
+		<script src="../external/jquery/jQuery-Splitter/jquery.splitter.js"></script>
+		<script src="../GCA_1DViewer/GCA_Viewer1D.js"></script>
+		<script src="../GCA_1DViewer/GCA_Utils.js"></script>
+
+		<script src="../GCA_3DViewer/js/three.js"></script>
+		<script src="../GCA_3DViewer/js/TrackballControls.js"></script>
+		<script src="../GCA_3DViewer/js/STLLoader.js"></script>
+		<script src="../GCA_3DViewer/js/MAVTKLoader.js"></script>
+		<script src="../GCA_3DViewer/js/Detector.js"></script>
+		<script src="../GCA_3DViewer/js/MARender.js"></script>
+		<script src="../GCA_3DViewer/js/GCA3DRenderer.js"></script>
+
+		<script src="../GCA_2DViewer/js/fabric.min.js"></script>
+		<script src="../GCA_2DViewer/js/GCA2DRenderer.js"></script>
+
+	</head>
+
+	<body>
+		<script type="module">
+			import { Viewer } from './Viewer.js';
+			new Viewer();  
+		</script>
+		
+<!-- 
+		<script type="module" src="./main.js"></script>
+-->	
+<!--
+		<div id="test" style="width:1000px; height:500px"></div>	
+		<script type="module">
+			import { Viewer } from './Viewer.js';
+			var viewer = new Viewer(document.querySelector('#test'));
+		</script>
+-->
+	</body>
+</html>
+ 	

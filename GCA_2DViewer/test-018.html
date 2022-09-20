@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8"/>
+<title>test-018: anatomogram viewer using config file</title>
+</head>
+
+
+<style type="text/css" media="screen">
+body, html {
+  color: #000;
+  background-color: #fff;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+#head {
+  position: fixed;
+  text-align: center;
+  top: 0%;
+  height: 5%;
+  left: 0%;
+  width: 100%;}
+#control {
+  z-index: 300;
+  position: fixed;
+  top: 5%;
+  height: 95%;
+  left: 0%;
+  width: 25%;}
+#modelWrapper {
+  color: #fff;
+  background-color: #000;
+  position: fixed;
+  top: 5%;
+  height: 95%;
+  left:  30%;
+  width: 70%;
+  margin: 0;
+  padding: 0;}
+#dialogtext {
+  z-index: 200;
+  border-style: solid;
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  width: 400px;
+  height: 300px;
+  opacity: 1;
+  text-align: center;
+  display: none;
+  overflow: auto;}
+</style>
+
+<body>
+
+<div id="head">
+test-018: Anatomogram viewer using config file.
+</div>
+
+<div id="dialogtext"> </div>
+
+<div id="control">
+<table>
+<tr>
+  <td>Landmark Select</td>
+  <td>
+  <table>
+    <tr>
+      <td>Anus-DSJ</td>
+      <td><input type="radio" name="landmarkselect"
+                 onclick="guiSelectLandmarks(0)", checked></td>
+    </tr>
+    <tr>
+      <td>DSJ-SF</td>
+      <td><input type="radio" name="landmarkselect"
+                 onclick="guiSelectLandmarks(1)"></td>
+    </tr>
+    <tr>
+      <td>SF-HF</td>
+      <td><input type="radio" name="landmarkselect"
+                 onclick="guiSelectLandmarks(2)"></td>
+    </tr>
+    <tr>
+      <td>HF-ICV</td>
+      <td><input type="radio" name="landmarkselect"
+                 onclick="guiSelectLandmarks(3)"></td>
+    </tr>
+    <tr>
+      <td>ICV-AO</td>
+      <td><input type="radio" name="landmarkselect"
+                 onclick="guiSelectLandmarks(4)"></td>
+    </tr>
+    <tr>
+      <td>AO-TA</td>
+      <td><input type="radio" name="landmarkselect"
+                 onclick="guiSelectLandmarks(5)"></td>
+    </tr>
+    <tr>
+      <td>ICV-TIIJ</td>
+      <td><input type="radio" name="landmarkselect"
+                 onclick="guiSelectLandmarks(7)"></td>
+    </tr>
+    <tr>
+      <td>TIIJ-JIJ</td>
+      <td><input type="radio" name="landmarkselect"
+                 onclick="guiSelectLandmarks(8)"></td>
+    </tr>
+  </table>
+</tr>
+<tr>
+  <td>Path Position</td>
+  <td><input type="range" id="positionrng" min="0.000" max="1.000" step="0.001"
+             value="0.500" oninput="guiSetPathPosition()"></td>
+  <td><label id="positionlab">0.500</label></td>
+</tr>
+<tr>
+<td>Anatomy Opacity</td>
+  <td><input type="range"
+	     id="anaoprng" min="0" max="1.00" step="0.01"
+	     value="0.30" oninput="guiSetAnaOp()"></td>
+  <td><label id="anaoplab">0.30</label></td>
+</tr>
+<tr>
+  <td>ROI Width</td>
+  <td><input type="range" id="roiwidthrng" min="0.001" max="1.00" step="0.01"
+             value="0.01" oninput="guiSetPathROIRange()"></td>
+  <td><label id="roiwidthlab">0.10</label></td>
+</tr>
+<tr>
+  <td><input type="button"
+	     id="midlnbut"
+	     value="Show Midlines"
+	     onclick="guiShowMidlines()"></td>
+</tr>
+<tr>
+  <td><input type="button"
+	     id="midlnbut"
+	     value="Delete All Markers"
+	     onclick="guiDeleteMarkers()"></td>
+</tr>
+<tr>
+  <td><input type="button"
+	     id="showmrkbut"
+	     value="Show Marker Positions"
+	     onclick="guiShowMarkers()"></td>
+</tr>
+  <tr>
+    <td>Position</td>
+    <td><label id="positioncoordslab">0.0000,0.0000</label></td>
+  </tr>
+<tr>
+  <td>Path Index</td>
+  <td><label id="positionindexlab">0,0</label></td>
+</tr>
+</table>
+</div>
+
+<div id="modelWrapper">
+</div>
+
+<script src='js/fabric.min.js'></script>
+<script src='js/GCA2DRenderer2.js'></script>
+<script>
+
+var prm = undefined;
+var config = undefined;
+var gcaRen = undefined;
+
+var roiWidth = 0.10;
+var marker_idx = 0;
+var position = 0.5;
+var landmarkIndex = 0;
+var first_update = true;
+var landmarks = [
+		 {abbreviated_name: 'A',    id: 'GUT_ATLAS_REG:28'},
+		 {abbreviated_name: 'DSJ',  id: 'GUT_ATLAS_REG:49'},
+		 {abbreviated_name: 'SF',   id: 'GUT_ATLAS_REG:50'},
+		 {abbreviated_name: 'HF',   id: 'GUT_ATLAS_REG:51'},
+		 {abbreviated_name: 'ICVc', id: 'GUT_ATLAS_REG:53'},
+		 {abbreviated_name: 'AO',   id: 'GUT_ATLAS_REG:54'},
+		 {abbreviated_name: 'TA',   id: 'GUT_ATLAS_REG:55'},
+		 {abbreviated_name: 'ICVi', id: 'GUT_ATLAS_REG:56'},
+		 {abbreviated_name: 'TIJJ', id: 'GUT_ATLAS_REG:57'},
+		 {abbreviated_name: 'JIJ',  id: 'GUT_ATLAS_REG:58'}];
+
+var paths = ['GUT_ATLAS_PAT:30', 'GUT_ATLAS_PAT:31'];
+
+guiSelectLandmarks = function(idx) {
+  landmarkIndex = parseInt(idx);
+  updateRenderer();
+}
+
+guiSetPathPosition = function() {
+  let rpr = document.getElementById('positionrng');
+  let rpl = document.getElementById('positionlab');
+  position = parseFloat(rpr.value);
+  rpl.innerHTML = position;
+  updateRenderer();
+}
+
+guiSetPathROIRange = function() {
+  let rwr = document.getElementById('roiwidthrng');
+  let rwl = document.getElementById('roiwidthlab');
+  roiWidth = parseFloat(rwr.value);
+  rwl.innerHTML = roiWidth;
+  updateRenderer();
+}
+
+guiDeleteMarkers = function() {
+  while(marker_idx > 0) {
+    gcaRen.removeMarker(--marker_idx);
+  }
+  marker_idx = 0;
+}
+
+guiSetAnaOp = function() {
+  let aor = document.getElementById('anaoprng');
+  let aol = document.getElementById('anaoplab');
+  let op = parseFloat(aor.value);
+  aol.innerHTML = op;
+  gcaRen.setProperties('ANATOMY_IMAGES', 'GUT_ATLAS_MOB:21', {opacity: op});
+  gcaRen.setProperties('ANATOMY_IMAGES', 'GUT_ATLAS_MOB:22', {opacity: op});
+}
+
+guiShowMidlines = function() {
+  let v = !(gcaRen.getProperty('PATHS', 'GUT_ATLAS_PAT:30', 'visible'));
+  let but = document.getElementById('midlnbut');
+  but.value = (v)? 'Hide Midlines': 'Show Midlines';
+  gcaRen.setProperties('PATHS', 'GUT_ATLAS_PAT:30', {visible: v});
+  gcaRen.setProperties('PATHS', 'GUT_ATLAS_PAT:31', {visible: v});
+}
+
+guiShowMarkers = function() {
+  let text = document.getElementById('dialogtext');
+  let but = document.getElementById('showmrkbut');
+  var style = window.getComputedStyle(text);
+  if(style.display === 'none') {
+    text.style.display = 'block';
+    but.value = 'Hide Marker Positions';
+    let txt = '<H1>Marker Positions</H1>' +
+	'<table><tr>' +
+	'<td>Name</td><td>Type</td><td>x</td><td>y</td><td>Index</td></tr>';
+    let lmks = gcaRen.findAllDispObj('LANDMARKS', undefined);
+    let mrks = gcaRen.findAllDispObj('MARKERS', undefined);
+    let objs = lmks.concat(mrks);
+    if(defined(objs)) {
+      for(let k in objs) {
+	let o = objs[k];
+	let s = o[1].gca_id;
+	let t;
+	if(o[1].gca_group === 'LANDMARKS') {
+	  let l = gcaRen.landmarkFromID(s);
+	  s = l.anatomy[0].abbreviated_name;
+	  t = 'L';
+	} else {
+	  t = 'M';
+	}
+	let p = o[1].gca_position;
+	let idx = gcaRen.positionToPath(p, 1.0);
+	let idx_txt = defined(idx)? '' + idx[1]: 'undefined';
+	txt += '<tr><td>' + s + '</td><td>' +
+			    t + '</td><td>' +
+			    p.x + '</td><td>' +
+			    p.y + '</td><td>' +
+			    idx_txt + '</td></tr>';
+      }
+    }
+    text.innerHTML = txt;
+  } else {
+    but.value = 'Show Marker Positions';
+    text.style.display = 'none';
+  }
+}
+
+updateRenderer = function() {
+  let lmk0 = landmarks[landmarkIndex];
+  let lmk1 = landmarks[landmarkIndex + 1];
+  let w2 = roiWidth / 2.0;
+  gcaRen.setPosition(lmk0.id, lmk1.id, position,
+                     lmk0.id, lmk1.id, position - w2,
+		     lmk0.id, lmk1.id, position + w2);
+  if(first_update) {
+    first_update = false;
+    gcaRen.setProperties('PATHS', 'GUT_ATLAS_PAT:30', {visible: false});
+    gcaRen.setProperties('PATHS', 'GUT_ATLAS_PAT:31', {visible: false});
+  }
+  if(landmarkIndex < 6) {
+    gcaRen.setProperties('ANATOMY_IMAGES', 'GUT_ATLAS_MOB:21',
+        {visible: true});
+    gcaRen.setProperties('ANATOMY_IMAGES', 'GUT_ATLAS_MOB:22',
+        {visible: false});
+  } else {
+    gcaRen.setProperties('ANATOMY_IMAGES', 'GUT_ATLAS_MOB:21',
+        {visible: false});
+    gcaRen.setProperties('ANATOMY_IMAGES', 'GUT_ATLAS_MOB:22',
+        {visible: true});
+  }
+}
+
+defined = function(x) {
+  return(typeof x !== 'undefined');
+}
+
+picker = function(ren, pos) {
+  const tol = 7.0;
+  let mrk = undefined;
+  let mrks = gcaRen.findAllDispObj('MARKERS', undefined);
+  for(let i = 0; i < mrks.length; ++i) {
+    let t = [pos.x - mrks[i][1].gca_position.x,
+             pos.y - mrks[i][1].gca_position.y];
+    let del = t[0] * t[0] + t[1] * t[1];
+    if(del < tol * tol) {
+      mrk = mrks[i][1];
+      break;
+    }
+  }
+  if(typeof mrk !== 'undefined') {
+    ren.removeMarker(mrk.gca_id);
+  } else {
+    ren.addMarker(marker_idx, pos, marker_idx, {color: '0x000000'});
+    ++marker_idx;
+  }
+  let lp = document.getElementById('positioncoordslab');
+  lp.innerHTML = pos.x.toFixed(2) + ',' + pos.y.toFixed(2);
+  let li = document.getElementById('positionindexlab');
+  let pp = gcaRen.positionToPath(pos, tol * tol);
+  if(defined(pp)) {
+    li.innerHTML = pp[0] + ',' + pp[1];
+  } else {
+    li.innerHTML = 'dist > ' + tol;
+  }
+}
+
+  /*!
+ * \fn parseURL
+ * Parses the query string of the URL for paramters
+ * (see https://en.wikipedia.org/wiki/Query_string).
+ * On return the global parameter map prm is set with key/value pairs.
+ */
+parseURL = function() {
+  prm = {};
+  var href = new String(location.href);
+  var seg = href.split('?');
+  base_url = seg[0];
+  if(seg.length === 2) {
+    seg = seg[1].split('&');
+    var len = seg.length;
+    for(var i = 0; i < len; ++i) {
+      var s = seg[i].split('=');
+      prm[s[0]] = s[1];
+    }
+  }
+}
+
+// Create the renderer, populate it and set it running
+main = function() {
+  gcaRen = new GCA2DRenderer(window, document.getElementById('modelWrapper'),
+                             updateRenderer, picker);
+  gcaRen.init(config);
+  gcaRen.loadModels();
+}
+
+parseURL()
+if(prm['config'] === undefined) {
+  alert('No parameters provided, a configuration file is required.');
+} else {
+  let config_file = prm['config'];
+  var req = new XMLHttpRequest();
+  req.open('GET', config_file, false);
+  req.send(null);
+  if(req.status === 200) {
+    /* Check valid JSON only to test, parsed again in GCA3DRenderer(). */
+    config = JSON.parse(req.responseText);
+    if(Boolean(config)) {
+      main();
+    } else {
+      alert('Invalid configuration file provided.');
+    }
+  } else {
+    alert('Unable to read configuration file.');
+  }
+}
+
+</script>
+
+</body>
+</html>

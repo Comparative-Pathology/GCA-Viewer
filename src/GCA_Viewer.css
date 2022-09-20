@@ -1,0 +1,262 @@
+/*!
+ * Style Sheet for Gut Cell Atlas Viewer 
+ */
+ 
+:root {
+  --margin-viewer3D: 3px;
+  --gap-viewer3D: 4px;
+}
+
+html, body {
+  background-color: #777;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/************** 3D panel **************/
+.container3D {
+	display: grid;
+	height: 100%; /*calc(100% - 2 * var(--gap-viewer3D));*/
+	width: 100%;
+	margin-top: var(--gap-viewer3D);
+	margin-left: var(--gap-viewer3D);
+}  	
+
+.thumbnails-container {
+	display: grid;
+	position: absolute;
+	max-height: calc(100% - var(--gap-viewer3D));
+	width: calc(20% - var(--gap-viewer3D));
+	overflow-x: hidden;
+	overflow-y: auto;
+	grid-template-columns: auto;
+	right: 0px;
+	top: 0px;
+	margin-bottom: var(--gap-viewer3D);
+	margin-right: 2px;
+	background: #393940;
+	column-gap: var(--gap-viewer3D);
+	row-gap: var(--gap-viewer3D); 
+	
+}  	
+
+.thumbnail-wrapper {
+	position: relative;
+	background: black;
+	border-radius: 7px;
+	height: 0px;
+	width: calc(100% - var(--gap-viewer3D));
+	border: solid 1px rgba(120, 120, 120, .5);
+}
+
+.thumbnail-wrapper:hover {
+	border: solid 1px rgb(200, 200, 0);
+}
+
+.viewer3D-wrapper {
+	position: relative;
+	background: black;
+	border-radius: 7px;
+	width: 100%;
+	height: 100%;
+	border: solid 1px rgba(120, 120, 120, .5);
+}
+
+.viewer3D-wrapper:hover {
+	border: solid 1px rgb(200, 200, 0);
+}
+
+.viewer-inner-wrapper {
+  height: calc(100% - 2 * var(--margin-viewer3D));
+  width: calc(100% - 2 * var(--margin-viewer3D));
+  position: relative;
+  top: var(--margin-viewer3D);
+  left: var(--margin-viewer3D);
+}
+
+.section-container {
+  background: black;
+}
+
+.section {
+  height: calc(100% - 2 * var(--margin-viewer3D) - 1em);
+  width: calc(100% - 2 * var(--margin-viewer3D) - 1em);
+  object-fit: contain;		
+  position: relative;			
+  top: 50%;
+  left: 50%;			
+  transform: translate(-50%, calc(-50% - .5em)); 
+  clip-path: circle(43%); 
+}
+
+.viewer3d-selection{
+  padding: 8px 8px 8px 10px;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 11px;
+  color: #c1c1c1;
+  display: block; 
+}
+
+.viewer3d-selection td:hover{
+  color: #f1f1f1;
+  cursor: default;
+}
+
+.material-icons, .icon-text {
+  vertical-align: middle;
+}
+
+.material-icons {
+  margin-right: 10px
+}
+
+
+/*************** 3D title-bar ***************/
+.title-bar {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  z-index: 20;
+  background-color: rgba(30, 30, 30, 0);
+  color: #a1a1a1;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  white-space: nowrap;
+  transition: color 400ms, font-size 400ms;
+}
+
+.title-bar:hover {
+  color: #f1f1f1;
+  font-size: 12px;
+  font-weight: bold;
+  transition: color 100ms, font-size 100ms;
+}
+
+.title-bar-thumbnail {
+  font-size: 9px;
+}
+
+.title-bar-thumbnail:hover {
+  font-size: 10px;
+}
+
+
+/*************** 3D control icons ***************/
+.view-mode-icon {
+  position: absolute;
+  top: 5px;
+  right: -5px;
+  z-index: 20;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.3);
+  transition: color 1s;
+  display: none; 
+}
+
+.view-mode-icon:hover {
+  font-size: 18px; 
+  color: rgba(255, 255, 255, 1);  
+  transition: color .2s;
+}
+.viewer3D-wrapper:hover .view-mode-icon {
+  display: block;
+}
+
+.thumbnail-wrapper:hover .view-mode-icon {
+  display: block;
+}
+
+
+/************** splitter panel (overriding defaults)  **************/
+.splitter_panel .vsplitter {
+	background: #456;
+	width: 5px;
+	height: calc(100% + 6px);
+	clip-path: polygon(
+	0 5px,
+	40% 0,
+	60% 0,
+	100% 5px,
+	100% calc(100% - 5px),
+	60% 100%,
+	40% 100%,
+	0% calc(100% - 5px),
+	0% 5px);
+	margin-top: -3px;
+	z-index: 10;
+}
+
+.splitter_panel:hover .vsplitter:hover {
+	background: #78a;
+}
+
+.splitter_panel .hsplitter {
+	z-index: 9;
+}
+
+/*************** 3D view selection panel ***************/
+.slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: min(280px, calc(100% - 3em)); 
+  height: 3px; /* Specified height */
+  background: #777; /* Grey background */
+  color: #777;
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  transition: color 2s, background 2s;
+}
+
+.slider:hover {
+  background: #f1f1f1;
+  opacity: 1.0;
+  transition: color .3s, background .3s;
+}
+
+.slidercontainer {
+  width: 100%;
+  height: 100%;
+  margin:0px auto;
+  text-align: center;
+  color: #777;
+  transition: color 2s;
+}
+
+.slidercontainer:not(.nohover):hover {
+  color: #f1f1f1;
+  transition: color .3s;
+}
+
+.slider-bar {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  z-index: 1;
+  background-color: rgba(30, 30, 30, 0.75);
+  color: #fff;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  white-space: nowrap;
+  transition: color 1s;
+  height: 20px;
+}
+
+.slider-bar:not(.nohover):hover {
+  color: #f1f1f1;
+  font-size: 14px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+
+
